@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getDownloadURL,
   getStorage,
-  list,
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
@@ -284,7 +283,9 @@ export default function Profile() {
                   <p className="text-red-700 mt-5">
                     {userListingsError ? "Error showing listings" : ""}
                   </p>
-                  <button className="text-green-700 uppercase">Edit</button>
+                  <Link to={`/update-listing/${listing._id}`}>
+                    <button className="text-green-700 uppercase">Edit</button>
+                  </Link>
                 </div>
               </div>
             );
